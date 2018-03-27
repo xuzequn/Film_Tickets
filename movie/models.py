@@ -13,7 +13,8 @@ class Movie(models.Model):
     poster_url_me = models.URLField('电影封面-中', default='')
     directors = models.CharField('导演', max_length=255)
     casts = models.CharField('演员', max_length=255)
-    created_time = models.DateTimeField('创建时间', default=False)
+    genes = models.CharField('类型', max_length=255, default='')
+    created_time = models.DateTimeField('创建时间', auto_now_add=True)
     is_top = models.BooleanField('是否评分最高', default=False)
     is_in_theater = models.BooleanField('正在上映',default=False)
 
